@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const SignUpPage = () => {
   return (
     <div className="center">
@@ -13,6 +15,9 @@ const SignUpPage = () => {
           <button type="submit">Sign Up</button>
         </div>
       </form>
+      <p>
+        Already have an account, <NavLink to="/login">Login</NavLink>{" "}
+      </p>
     </div>
   );
 };
