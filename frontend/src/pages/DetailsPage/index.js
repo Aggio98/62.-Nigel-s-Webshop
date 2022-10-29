@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { DetailsCard } from "../../components";
 
-const DetailsPage = () => {
+const DetailsPage = ({ products, addToCart, addToFavorite }) => {
   const params = useParams();
   //console.log("this is params", params);
   const [details, set_details] = useState(null);
@@ -39,6 +39,10 @@ const DetailsPage = () => {
             description={details.description}
             category={details.categorie}
           />
+          <button onClick={() => addToCart(products)}>Add To Cart</button>{" "}
+          <button onClick={() => addToFavorite(products)}>
+            Add To Favorite
+          </button>
         </div>
       )}
     </div>

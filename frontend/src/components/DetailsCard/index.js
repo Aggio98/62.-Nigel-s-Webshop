@@ -14,7 +14,6 @@ const DetailsCard = (props) => {
         <p>Category: {props.category.title}</p>
         <p>{props.description}</p>
       </div>
-      <button>Add To Cart</button> <button>Add To Favorite</button>
     </div>
   );
 };
