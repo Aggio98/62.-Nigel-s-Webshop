@@ -3,7 +3,7 @@ import { HomeCard } from "../../components";
 const CartPage = ({ addItem }) => {
   const cartItem = addItem.filter((products) => {
     if (products.id === true) {
-      return true;
+      return {};
     } else {
       return false;
     }

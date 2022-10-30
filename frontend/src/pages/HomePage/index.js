@@ -60,13 +60,11 @@ const HomePage = ({ products, addToCart, addToFavorite }) => {
                   price={p.price}
                   rating={p.rating}
                   description={p.description}
-                  addToCart={addToCart}
-                  addToFavorite={addToFavorite}
                 />
                 <button onClick={() => addToCart(p.id)}>Add To Cart</button>{" "}
-                <button onClick={() => addToFavorite(p.id)}>
+                {/* <button onClick={() => addToFavorite(p.id)}>
                   Add To Favorite
-                </button>
+                </button> */}
               </div>
             ))}
       </div>

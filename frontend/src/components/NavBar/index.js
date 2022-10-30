@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./style.css";
 import { BsCart, BsPerson, BsHeart } from "react-icons/bs";
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
   return (
     <div className="navbar-container">
       <div className="big-box">
@@ -19,9 +19,15 @@ const NavBar = () => {
         </form>
       </div>
       <div className="rightnav">
-        <NavLink to="/login" className="icons">
-          <BsPerson />
-        </NavLink>
+        <div>
+          {user ? (
+            <p>Welcome,{user.name}</p>
+          ) : (
+            <NavLink to="/login" className="icons">
+              <BsPerson />
+            </NavLink>
+          )}
+        </div>
         <NavLink to="/cart" className="icons">
           <BsCart />
         </NavLink>

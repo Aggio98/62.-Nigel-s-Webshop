@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 function App() {
   const [products, set_products] = useState([]);
   const [cart, set_cart] = useState([]);
+  const [user, setUser] = useState([]);
   //const [favorite, set_favorite] = useState([]);
 
   const getProducts = async () => {
@@ -53,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar user={user} />
       <Routes>
         <Route
           path="/"
@@ -75,7 +76,7 @@ function App() {
             />
           }
         />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage setUser={setUser} />} />
         <Route path="/favorite" element={<FavoritePage />} />
         <Route path="/cart" element={<CartPage addItem={products} />} />
         <Route path="/signup" element={<SignUpPage />} />
